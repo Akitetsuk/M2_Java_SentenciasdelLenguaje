@@ -51,18 +51,50 @@ public class sentencias {
         p43();
         p44();
         p45();
+        p46();
+        p47();
+        p48();
+        p49();
+        p50();
+        p51();
+        p52();
     }
-
     public static void p1() {
         System.out.println("Problema 1 Haz  un  programa  que  según  el  valor  de  x  (un  valor  entrado  por  teclado),  indique  si  es  mayor  que  10 con el mensaje “demasiado alto” o menor que 10 con el mensaje “demasiado bajo”. ");
+        Scanner reader = new Scanner(System.in);
+        System.out.print("introduceme el valor de x: ");
+        int x = reader.nextInt();
+        if (x > 10) {
+            System.out.println("numero demasiado alto");
+        } else {
+            System.out.println("demasiado bajo");
+        }
     }
-
     public static void p2() {
         System.out.println("Problema 2 Haz un programa que, según el día de la semana, nos diga “a estudiar toca!” o “por fin descanso!” ");
+        Scanner reader = new Scanner((System.in));
+        System.out.print("introduce un dia de la semana");
+        String dia = reader.next().toLowerCase();
+        if (dia.equals("lunes") || dia.equals("martes") || dia.equals("miercoles") || dia.equals("jueves") || dia.equals("viernes")) {
+            System.out.println("a estudiar toca");
+        } else if (dia.equals("sabado") || dia.equals("domingo")) {
+            System.out.println("por fin descanso");
+        } else {
+            System.out.println("introduce un dia correcto");
+        }
     }
-
     public static void p3() {
         System.out.println("Problema 3 Haz  un  programa  que  decida,  según  el  dinero  que  tengamos,  si  vamos  al  videoclub,  al  cine  o  nos vamos “al parque...”. Nota: usa condicionales “anidados”.");
+        Scanner reader = new Scanner(System.in);
+        System.out.println("introduce el valor del dinero");
+        int dinero = reader.nextInt();
+        if (dinero < 5) {
+            System.out.println("vamos al parque");
+        } else if (dinero < 10) {
+            System.out.println("vamos al videoclub");
+        } else {
+            System.out.println("vamos al cine");
+        }
     }
     public static void p4() {
         System.out.println("Problema 4 Muestra por pantalla el resultado de sumar 5 variables, y dile al usuario “te has pasado!” si el resultado es > 100.  ");
@@ -72,12 +104,39 @@ public class sentencias {
     }
     public static void p6() {
         System.out.println("Problema 6 Presenta  un  menú  al  usuario  donde  pueda  escoger  5  opciones.  Si  selecciona  cualquiera  de  ellas, muestra por pantalla: “has escogido la opción X”. Usa un switch.");
+        Scanner reader = new Scanner(System.in);
+        int numero;
+        System.out.println("Introduce una opcion [1-5]: ");
+        numero = reader.nextInt();
+        switch (numero) {
+            case 1:
+                System.out.println("Has elegido la opcion 1");
+                break;
+            case 2:
+                System.out.println("Has elegido la opcion 2");
+                break;
+            case 3:
+                System.out.println("Has elegido la opcion 3");
+                break;
+            case 4:
+                System.out.println("Has elegido la opcion 4");
+                break;
+            case 5:
+                System.out.println("Has elegido la opcion 5");
+                break;
+            default:
+                System.out.println("No has seleccionado una opcion correcta");
+        }
     }
     public static void p7() {
         System.out.println("Problema 7 ¿Qué sucede si quitamos los “break” en el ejercicio anterior? Explica por qué. ");
+        System.out.println("El BREAK se una para poder saldir de una instruccion sino se ejecutarian todos los case");
     }
     public static void p8() {
         System.out.println("Problema 8 Haz un bucle que nos muestre todos los números del 1 al 100.  ");
+        for (int i = 0; i < 100; i++) {
+            System.out.println(i + "");
+        }
     }
     public static void p9() {
         System.out.println("Problema 9 Muestra ahora la tabla de multiplicar del 37.  ");
@@ -115,7 +174,7 @@ public class sentencias {
         int a;
         a = reader.nextInt();
         if(a>=0) {
-            System.out.println("poditivo");
+            System.out.println("positivo");
         }
         else {
             System.out.println("negativo");
@@ -466,22 +525,130 @@ public class sentencias {
         System.out.println("7x1=7 7x2=14  7x3=21 ... 7x9=63  7x10= 70 ");
     }
 
-    public static void p43(){
+    public static void p43() {
         System.out.println("Problema 43 Escribe  un  programa  que  lea  un  número  n  (n  >=  1)  y dibuje  en  la  pantalla  un  cuadrado  de  n  x  n asteriscos (*). Por ejemplo, si se le da el número 3 el resultado tendría que ser:");
         System.out.println("***");
         System.out.println("***");
         System.out.println("***");
+        Scanner reader = new Scanner(System.in);
+        System.out.println("introduce el valor de N");
+        int n = reader.nextInt();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.println("* ");
+            }
+            System.out.println(" ");
+        }
     }
-
-    public static void p44(){
+    public static void p44() {
         System.out.println("Problema 44 Escribe  un  programa  que  lea  un  número    n  (n  >=  1)  y  dibuje  en  la  pantalla  un  cuadrado  de  n  x  n formado  por  los  números  enteros  positivos  entre  1  y  n.  Por  ejemplo,  si  se  le  da  el  nombre  4  el resultado tendría que ser:");
         System.out.println("1111");
         System.out.println("2222");
         System.out.println("3333");
         System.out.println("4444");
+        System.out.println("Si el nombre que se le da es negativo (o cero) el programa tendría que escribir un mensaje indicando que el número dado no es válido. ");
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Introduce un numero: ");
+        int n = reader.nextInt();
+        if (n < 0 || n == 0) {
+            System.out.println("introduce un numero apartir del 1");
+        } else {
+            System.out.println("numero correcto");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    System.out.println((i + 1) + " ");
+                }
+                System.out.println("");
+            }
+        }
     }
 
+    public static void p45() {
+        System.out.println("Problema 45 Igual que en el ejercicio anterior pero haciendo que en cada fila estén los números entre 1 y n. Por ejemplo, si se le da el número 5 el resultado tendría que ser: ");
+        System.out.println("1 2 3 4 5 ");
+        System.out.println("1 2 3 4 5 ");
+        System.out.println("1 2 3 4 5 ");
+        System.out.println("1 2 3 4 5 ");
+        System.out.println("1 2 3 4 5 ");
+        Scanner reader = new Scanner(System.in);
+        System.out.println("introduce el valor de n");
+        int n = reader.nextInt();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.println((j + 1) + " ");
+            }
+            System.out.println(" ");
+        }
+    }
 
+    public static void p46() {
+        System.out.println("Problema 46 Escribe un programa que dado un número n (n >= 1) escriba un triángulo de asteriscos de altura n. Por ejemplo, si el número que se le da es 4, el resultado tendría que ser:  ");
+        System.out.println("*");
+        System.out.println("* *");
+        System.out.println("* * *");
+        System.out.println("* * * *");
+        System.out.println("Si el número  que se le da es negativo (o cero) el programa tendría que escribir un mensaje indicando que el número dado no es válido. ");
+        System.out.println("Si el nombre que se le da es negativo (o cero) el programa tendría que escribir un mensaje indicando que el número dado no es válido. ");
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Introduce un numero: ");
+        int n = reader.nextInt();
+        if (n < 0 || n == 0) {
+            System.out.println("introduce un numero apartir del 1");
+        } else {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j <= i; j++) {
+                    System.out.println("*");
+                }
+                System.out.println("");
+            }
+        }
+    }
+
+    public static void p47() {
+        System.out.println("Problema 47 Igual que en el ejercicio anterior pero ahora invirtiendo el triángulo. Por ejemplo, si el número que se le da es 3, el resultado tendría que ser:  ");
+        System.out.println("* * *");
+        System.out.println("* *");
+        System.out.println("*");
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Introduce un numero: ");
+        int n = reader.nextInt();
+        if (n < 0 || n == 0) {
+            System.out.println("introduce un numero apartir del 1");
+        } else {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n - 1; j++) {
+                    System.out.println("*");
+                }
+                System.out.println("");
+            }
+        }
+    }
+
+    public static void p48(){
+        System.out.println("Problema 48 Escribe un programa que lea un número n (n >= 3) y dibuje en la pantalla el perímetro de un cuadrado de n x n formado por los números enteros positivos entre 1 y n. Por ejemplo, si se le da el número 4 el resultado tendría que ser algo como esto:  ");
+        System.out.println("* * * *");
+        System.out.println("*     *");
+        System.out.println("*     *");
+        System.out.println("* * * *");
+    }
+
+    public static void p49(){
+        System.out.println("Escribe un programa que dado un número n (n >_ 4) escribe un triángulo de asteriscos de altura n. Por ejemplo, si el número que se le da es 5, el resultado tendría que ser:  ");
+        System.out.println("*");
+    }
+
+    public static void p50(){
+        System.out.println("Problema 50 Escribe un programa que \"dibuje\" un cuadrado de n x n utilizando los caracteres + y -. El primero (+)  para  las filas  impares  y  el  segundo  (-)  para  las  filas  pares.  El  valor  n  se  debe  de  obtener  del exterior. Resultados del programa para n=4 y para n=5 ");
+    }
+
+    public static void p51(){
+        System.out.println("Problema 51 Escribe un programa que \"dibuje\" un cuadrado de  n x n  utilizando  el  grupo  de  caracteres  \"+ -\". El valor  n  se  debe  de obtener  del  exterior. A  continuación  se  muestra  el  resultado  que  el  programa tendría que proporcionar para n=4 y para n=6  ");
+    }
+
+    public static void p52(){
+        System.out.println("Problema 52 Escribe un programa que dibuje un triángulo de n pisos, con el número de cada piso indicado a la izquierda. Los pisos impares se deben de hacer con el carácter * y los pares con el carácter +.  ");
+        System.out.println("El  valor  n  se  debe  de  obtener  del  exterior  y  no  se debe  de  hacer  ninguna  verificación. A continuación  se  muestra  el  resultado  que  el  programa  debería  de proporcionar  para  n=4  y  para n=5  ");
+    }
 }
 
 
